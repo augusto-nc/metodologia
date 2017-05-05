@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.7305764411027569" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.desenvolvimentonc.acessoria.visual.MateriaCadastroController">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <TableView fx:id="tableMateria" layoutX="102.0" layoutY="63.0" prefHeight="398.0" prefWidth="493.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                  <TableColumn prefWidth="25.0" text="Id" />
+                <TableColumn prefWidth="75.0" text="Titulo" />
+                <TableColumn prefWidth="75.0" text="Url" />
+                <TableColumn prefWidth="75.0" text="Jornalista 1" />
+                <TableColumn prefWidth="75.0" text="Jornalista 2" />
+                <TableColumn prefWidth="75.0" text="Fotografo" />
+                <TableColumn prefWidth="75.0" text="Qtd. de fotos" />
+                <TableColumn prefWidth="75.0" text="Categoria" />
+                <TableColumn prefWidth="75.0" text="Assuntos" />
+                 <TableColumn prefWidth="75.0" text="Data" />
+              </columns>
+            </TableView>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="410.0" prefWidth="300.0">
+         <children>
+            <GridPane layoutX="33.0" layoutY="115.0" prefHeight="359.0" prefWidth="299.0" AnchorPane.bottomAnchor="239.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="155.0" minWidth="0.0" prefWidth="76.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="274.0" minWidth="10.0" prefWidth="136.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Titulo:" />
+                  <TextField fx:id="editTitle" GridPane.columnIndex="1" />
+                  <Label text="Url:" GridPane.rowIndex="1" />
+                  <TextField fx:id="editUrl" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Data:" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="datePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <ComboBox fx:id="comboJornalista1" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="Jornalista 1" GridPane.rowIndex="3" />
+                  <Label text="Jornalista 2" GridPane.rowIndex="4" />
+                  <ComboBox fx:id="comboJornalista2" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <Label text="Categoria" GridPane.rowIndex="7" />
+                  <ComboBox fx:id="comboCategoria" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="Assuntos" GridPane.rowIndex="8" />
+                  <Label text="Fotógrafo" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="comboFotografo" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <Label text="Qtd. Fotos:" GridPane.rowIndex="6" />
+                  <TextField fx:id="editQtdFotos" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+               </children>
+            </GridPane>
+         </children></AnchorPane>
+  </items>
+</SplitPane>

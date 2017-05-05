@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+fx:controller="br.com.desenvolvimentonc.acessoria.visual.FXMLController"
+>
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Cadastro">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Matérias" />
+              <MenuItem mnemonicParsing="false" text="Jornalistas" />
+              <MenuItem mnemonicParsing="false" text="Fotógrafos" />
+            </items>
+          </Menu>
+       
+        </menus>
+      </MenuBar>
+      <AnchorPane fx:id="holder" prefHeight="585.0" prefWidth="800.0" />
+   </children>
+</VBox>

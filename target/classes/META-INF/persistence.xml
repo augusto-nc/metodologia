@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="br.com.desenvolvimentonc_acessoria_jar_1.0-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.hibernate.ejb.HibernatePersistence</provider>
+    <class>br.com.desenvolvimentonc.acessoria.bd.entities.Materia</class>
+    <class>br.com.desenvolvimentonc.acessoria.bd.entities.Assunto</class>
+    <class>br.com.desenvolvimentonc.acessoria.bd.entities.Categoria</class>
+    <class>br.com.desenvolvimentonc.acessoria.bd.entities.Colaborador</class>
+    <class>br.com.desenvolvimentonc.acessoria.bd.entities.Foto</class>
+    <class>br.com.desenvolvimentonc.acessoria.bd.entities.Fotografo</class>
+    <class>br.com.desenvolvimentonc.acessoria.bd.entities.Jornalista</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/acessoria?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="zvk13hl1"/>
+      <property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>
+    </properties>
+  </persistence-unit>
+</persistence>
