@@ -45,23 +45,40 @@ public class FXMLController implements Initializable {
     
     Materia selectedMateria=new Materia();
     
-   void materiaClicked() {
-       System.out.println("---------");
-       
-    
-
+    @FXML
+     private void materiaClicked() {
        holder.getChildren().clear();
        try {
-           System.out.println("Add");
            Parent root = FXMLLoader.load(getClass().getResource("/fxml/MateriaCadastro.fxml"));
            holder.getChildren().addAll(root);
-            System.out.println("Add -2 ");
 
        } catch (IOException ex) {
            Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
        }
    }
-   
+       @FXML
+     private void fotografoClicked() {
+       holder.getChildren().clear();
+       try {
+           Parent root = FXMLLoader.load(getClass().getResource("/fxml/FotografoCadastro.fxml"));
+           holder.getChildren().addAll(root);
+
+       } catch (IOException ex) {
+           Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
+       }
+   }
+     
+     @FXML
+     void jornalistaClicked() {
+      
+       holder.getChildren().clear();
+       try {
+           Parent root = FXMLLoader.load(getClass().getResource("/fxml/JornalistaCadastro.fxml"));
+           holder.getChildren().addAll(root);
+       } catch (IOException ex) {
+           Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
+       }
+   }
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {

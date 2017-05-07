@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
-fx:controller="br.com.desenvolvimentonc.acessoria.visual.FXMLController"
->
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.desenvolvimentonc.acessoria.visual.FXMLController">
    <children>
       <MenuBar>
         <menus>
           <Menu mnemonicParsing="false" text="Cadastro">
             <items>
-              <MenuItem mnemonicParsing="false" text="Matérias" />
-              <MenuItem mnemonicParsing="false" text="Jornalistas" />
-              <MenuItem mnemonicParsing="false" text="Fotógrafos" />
+              <MenuItem mnemonicParsing="false" onAction="#materiaClicked" text="Matérias" />
+              <MenuItem mnemonicParsing="false" onAction="#jornalistaClicked" text="Jornalistas" />
+              <MenuItem mnemonicParsing="false" onAction="#fotografoClicked" text="Fotógrafos" />
             </items>
           </Menu>
        
         </menus>
       </MenuBar>
-      <AnchorPane fx:id="holder" prefHeight="585.0" prefWidth="800.0" />
+      <AnchorPane fx:id="holder" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="585.0" prefWidth="800.0" />
    </children>
 </VBox>

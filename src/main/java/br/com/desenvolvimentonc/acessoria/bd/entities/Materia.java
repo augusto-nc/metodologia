@@ -7,6 +7,7 @@ package br.com.desenvolvimentonc.acessoria.bd.entities;
 
 import com.sun.istack.internal.NotNull;
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.Calendar;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -25,6 +26,7 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.persistence.Transient;
 
 /**
  *
@@ -36,20 +38,16 @@ import javax.persistence.TemporalType;
 public class Materia implements Serializable {
 
     private static final long serialVersionUID = 1L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name="titulo")
     private String title;
     
-    @Column(name="url")
     private String url;
     
     
-    @Column(name="qtdFotos")
     private Integer qtdFotos;
 
+    @Column(name="qtdFotos")
     public Integer getQtdFotos() {
         return qtdFotos;
     }
@@ -60,18 +58,15 @@ public class Materia implements Serializable {
     
     
     
-    @OneToOne
     private Categoria categoria;
     
-    @OneToOne
     Jornalista jornalista1;
       
-      @OneToOne
-    Jornalista jornalista2;
+      Jornalista jornalista2;
     
-    @OneToOne
     Fotografo fotografo;
 
+    @OneToOne
     public Fotografo getFotografo() {
         return fotografo;
     }
@@ -80,9 +75,9 @@ public class Materia implements Serializable {
         this.fotografo = fotografo;
     }
       
-    @Temporal(TemporalType.TIMESTAMP)
     Calendar date;
 
+    @Temporal(TemporalType.TIMESTAMP)
     public Calendar getDate() {
         return date;
     }
@@ -91,6 +86,7 @@ public class Materia implements Serializable {
         this.date = date;
     }
 
+    @OneToOne
     public Jornalista getJornalista1() {
         return jornalista1;
     }
@@ -99,31 +95,47 @@ public class Materia implements Serializable {
         this.jornalista1 = jornalista1;
     }
 
+    @OneToOne
     public Jornalista getJornalista2() {
         return jornalista2;
     }
-
+    
+    
+    
+    @Transient
+    DateFormat dateFormat= DateFormat.getDateInstance();
+    
+    
+    @Transient
+    public String getFormatedDate(){
+        return date!=null ? dateFormat.format(date.getTime()) : "";
+    }
+    
     public void setJornalista2(Jornalista jornalista2) {
         this.jornalista2 = jornalista2;
     }
     
+         @Transient
     public String getNameJornalista2() {
          return jornalista2!=null ? jornalista2.getName() : "";
     }
-
+    
+     @Transient
     public String getNameJornalista1() {
         return jornalista1!=null ? jornalista1.getName() : "";
     }
     
+         @Transient
      public String getNameFotografo() {
         return fotografo!=null ? fotografo.getName() : "";
     }
+       @Transient
      public String getNameCategoria() {
         return categoria!=null ? categoria.getName() : " - ";
     }
      
      
-     
+     @Transient
     public String getNameAssuntos() {
         if(assuntos!=null){
             String str=new String();
@@ -137,21 +149,18 @@ public class Materia implements Serializable {
        
     }
 
-    @ManyToMany
-      @JoinTable(name="assunto_materia", joinColumns=
-      {@JoinColumn(name="materia_id")}, inverseJoinColumns=
-        {@JoinColumn(name="assunto_id")})
     private List<Assunto> assuntos;
 
+    @Column(name="url")
     public String getUrl() {
         return url;
     }
     
-    @OneToMany(cascade = ALL,mappedBy = "materia")
     List<Foto> fotos;
 
     
     
+    @OneToMany(cascade = ALL,mappedBy = "materia")
     public List<Foto> getFotos() {
         return fotos;
     }
@@ -164,6 +173,7 @@ public class Materia implements Serializable {
         this.url = url;
     }
 
+    @OneToOne
     public Categoria getCategoria() {
         return categoria;
     }
@@ -172,6 +182,10 @@ public class Materia implements Serializable {
         this.categoria = categoria;
     }
 
+    @ManyToMany
+    @JoinTable(name="assunto_materia", joinColumns=
+            {@JoinColumn(name="materia_id")}, inverseJoinColumns=
+                    {@JoinColumn(name="assunto_id")})
     public List<Assunto> getAssuntos() {
         return assuntos;
     }
@@ -181,6 +195,8 @@ public class Materia implements Serializable {
     }
     
     
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
@@ -189,6 +205,7 @@ public class Materia implements Serializable {
         this.id = id;
     }
 
+    @Column(name="titulo")
     public String getTitle() {
         return title;
     }

@@ -19,6 +19,5 @@ public class Jornalista extends Colaborador{
     
     
     
-    
-    
+  
 }
