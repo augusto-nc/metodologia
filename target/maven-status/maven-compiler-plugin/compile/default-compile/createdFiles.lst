@@ -4,10 +4,15 @@ br\com\desenvolvimentonc\acessoria\visual\JornalistaCadastroController$1.class
 br\com\desenvolvimentonc\acessoria\bd\dao\MateriaDao.class
 br\com\desenvolvimentonc\acessoria\visual\FotografoCadastroController$1.class
 br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController$1.class
+br\com\desenvolvimentonc\acessoria\visual\CategoriaCadastroController.class
+br\com\desenvolvimentonc\acessoria\visual\CategoriaCadastroController$1.class
+br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController$4$1.class
 br\com\desenvolvimentonc\acessoria\bd\entities\Categoria.class
 br\com\desenvolvimentonc\acessoria\bd\entities\Fotografo.class
+br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController$4.class
 br\com\desenvolvimentonc\acessoria\visual\FXMLController.class
 br\com\desenvolvimentonc\acessoria\bd\utils\DaoFactory.class
+br\com\desenvolvimentonc\acessoria\bd\dao\CategoriaDao.class
 br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController$2$1.class
 br\com\desenvolvimentonc\acessoria\bd\dao\FotografoDao.class
 br\com\desenvolvimentonc\acessoria\bd\entities\Foto.class
@@ -17,6 +22,7 @@ br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController$2.class
 br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController.class
 br\com\desenvolvimentonc\acessoria\visual\JornalistaCadastroController.class
 br\com\desenvolvimentonc\acessoria\bd\entities\Jornalista.class
+br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController$5.class
 br\com\desenvolvimentonc\acessoria\bd\entities\Materia.class
 br\com\desenvolvimentonc\acessoria\bd\entities\Colaborador.class
 br\com\desenvolvimentonc\acessoria\visual\MateriaCadastroController$3.class

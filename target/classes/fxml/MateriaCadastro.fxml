@@ -13,19 +13,19 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<SplitPane dividerPositions="0.7305764411027569" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="805.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.desenvolvimentonc.acessoria.visual.MateriaCadastroController">
+<SplitPane dividerPositions="0.6291331546023236" AnchorPane.topAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" prefHeight="527.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.com.desenvolvimentonc.acessoria.visual.MateriaCadastroController">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
             <TableView fx:id="tableMateria" layoutX="102.0" layoutY="63.0" prefHeight="398.0" prefWidth="493.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <columns>
                   <TableColumn prefWidth="25.0" text="Id" />
-                <TableColumn prefWidth="75.0" text="Titulo" />
-                <TableColumn prefWidth="75.0" text="Url" />
-                <TableColumn prefWidth="75.0" text="Jornalista 1" />
-                <TableColumn prefWidth="75.0" text="Jornalista 2" />
-                <TableColumn prefWidth="75.0" text="Fotografo" />
-                <TableColumn prefWidth="75.0" text="Qtd. de fotos" />
+                <TableColumn prefWidth="88.0" text="Titulo" />
+                <TableColumn prefWidth="83.0" text="Url" />
+                <TableColumn prefWidth="86.0" text="Jornalista 1" />
+                <TableColumn prefWidth="70.0" text="Jornalista 2" />
+                <TableColumn prefWidth="96.0" text="Fotografo" />
+                <TableColumn prefWidth="27.0" text="Qtd. de fotos" />
                 <TableColumn prefWidth="75.0" text="Categoria" />
                 <TableColumn prefWidth="75.0" text="Assuntos" />
                  <TableColumn prefWidth="75.0" text="Data" />

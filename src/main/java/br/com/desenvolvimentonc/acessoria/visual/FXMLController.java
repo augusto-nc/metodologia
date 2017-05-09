@@ -56,6 +56,20 @@ public class FXMLController implements Initializable {
            Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
        }
    }
+     
+     
+         
+    @FXML
+     private void categoriaClicked() {
+       holder.getChildren().clear();
+       try {
+           Parent root = FXMLLoader.load(getClass().getResource("/fxml/CategoriaCadastro.fxml"));
+           holder.getChildren().addAll(root);
+
+       } catch (IOException ex) {
+           Logger.getLogger(FXMLController.class.getName()).log(Level.SEVERE, null, ex);
+       }
+   }
        @FXML
      private void fotografoClicked() {
        holder.getChildren().clear();

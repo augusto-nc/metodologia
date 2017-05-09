@@ -5,9 +5,11 @@
  */
 package br.com.desenvolvimentonc.acessoria.visual;
 
+import br.com.desenvolvimentonc.acessoria.bd.dao.CategoriaDao;
 import br.com.desenvolvimentonc.acessoria.bd.dao.FotografoDao;
 import br.com.desenvolvimentonc.acessoria.bd.dao.JornalistaDao;
 import br.com.desenvolvimentonc.acessoria.bd.dao.MateriaDao;
+import br.com.desenvolvimentonc.acessoria.bd.entities.Categoria;
 import br.com.desenvolvimentonc.acessoria.bd.entities.Colaborador;
 import br.com.desenvolvimentonc.acessoria.bd.entities.Fotografo;
 import br.com.desenvolvimentonc.acessoria.bd.entities.Jornalista;
@@ -69,6 +71,11 @@ public class MateriaCadastroController implements Initializable {
     private ComboBox comboFotografo;
     
     @FXML
+    private ComboBox comboCategoria;
+    private ObservableList<Categoria> categoriaList;
+    
+    
+    @FXML
     void novoClicked(){
         materiaSelected= new Materia();
         refreshFields();
@@ -86,7 +93,9 @@ public class MateriaCadastroController implements Initializable {
         materiaSelected.setJornalista1((Jornalista) comboJornalista1.getSelectionModel().getSelectedItem());
         materiaSelected.setJornalista2((Jornalista) comboJornalista2.getSelectionModel().getSelectedItem());
         materiaSelected.setFotografo((Fotografo) comboFotografo.getSelectionModel().getSelectedItem());
-
+        materiaSelected.setCategoria((Categoria) comboCategoria.getSelectionModel().getSelectedItem());
+        
+        if(datePicker.getValue()!=null){
         Date date=   java.util.Date.from( 
         datePicker.getValue().atStartOfDay( 
             ZoneId.systemDefault() 
@@ -95,6 +104,7 @@ public class MateriaCadastroController implements Initializable {
         Calendar c= Calendar.getInstance();
         c.setTime(date);
         materiaSelected.setDate(c);
+        }
         
         
         
@@ -126,12 +136,15 @@ public class MateriaCadastroController implements Initializable {
         comboJornalista2.setValue(materiaSelected.getJornalista2());
         comboJornalista1.setValue(materiaSelected.getJornalista1());
         comboFotografo.setValue(materiaSelected.getFotografo());
+        comboCategoria.setValue(materiaSelected.getCategoria());
+
 
     }
     
     ObservableList<Materia> materiaList;
      JornalistaDao jornalistaDao=new JornalistaDao();
      FotografoDao fotografoDao=new FotografoDao();
+     CategoriaDao categoriaDao=new CategoriaDao();
 
      MateriaDao materiaDao= new MateriaDao();
      ObservableList<Jornalista> jornalistaList;
@@ -162,9 +175,10 @@ public class MateriaCadastroController implements Initializable {
         tableMateria.setItems(materiaList);
         jornalistaList= FXCollections.observableArrayList();
         fotografoList= FXCollections.observableArrayList();
-
+        categoriaList=FXCollections.observableArrayList();
         jornalistaList.addAll(jornalistaDao.findAll());
         fotografoList.addAll(fotografoDao.findAll());
+        categoriaList.addAll(categoriaDao.findAll());
         configComboBox();
         
         materiaList.addAll(materiaDao.findAll());
@@ -184,6 +198,7 @@ public class MateriaCadastroController implements Initializable {
         comboJornalista1.setItems(jornalistaList);
         comboJornalista2.setItems(jornalistaList);
         comboFotografo.setItems(fotografoList);
+        comboCategoria.setItems(categoriaList);
         Callback cellFactory = new Callback<ListView<Colaborador>,ListCell<Colaborador>>(){
     @Override
     public ListCell<Colaborador> call(ListView<Colaborador> l){
@@ -223,8 +238,40 @@ public class MateriaCadastroController implements Initializable {
         comboFotografo.setConverter(strConverter);
         comboFotografo.setCellFactory(cellFactory);
         
-        
-        
+             Callback cellFactory1 = new Callback<ListView<Categoria>,ListCell<Categoria>>(){
+    @Override
+    public ListCell<Categoria> call(ListView<Categoria> l){
+        return new ListCell<Categoria>(){
+            @Override
+            protected void updateItem(Categoria item, boolean empty) {
+                super.updateItem(item, empty);
+                if (item == null || empty) {
+                    setGraphic(null);
+                } else {
+                    setText(item.getName());
+                }
+            }
+        } ;
+    }
+};
+         StringConverter<Categoria> strConverter1=new StringConverter<Categoria>() {
+              @Override
+              public String toString(Categoria user) {
+                if (user == null){
+                  return null;
+                } else {
+                  return user.getName();
+                }
+              }
+
+            @Override
+            public Categoria fromString(String userId) {
+                return null;
+            }
+        };
+    
+        comboCategoria.setConverter(strConverter1);
+        comboCategoria.setCellFactory(cellFactory1);
     }
     
 }
